@@ -1,0 +1,43 @@
+name: urn-draw
+
+on:
+  schedule:
+    - cron: "0 */4 * * *"   # every 4h: provider offline -> node refreshes
+  workflow_dispatch: {}
+
+permissions:
+  contents: write            # push to gh-pages
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install requests
+
+      - name: Draw a clean US residential proxy
+        env:
+          URN_API_KEY: ${{ secrets.UR_API_KEY }}
+        run: |
+          python urn_draw.py --tries 5 --country us
+
+      - name: Publish to Pages artifacts
+        if: success()
+        run: python gha/publish_pages.py
+
+      - name: Deploy to gh-pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./urnetwork/site
+          publish_branch: gh-pages
+          force_orphan: true
+          keep_files: false
