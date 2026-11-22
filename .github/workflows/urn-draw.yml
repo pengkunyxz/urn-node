@@ -37,7 +37,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./urnetwork/site
+          publish_dir: ./site
           publish_branch: gh-pages
           force_orphan: true
           keep_files: false
