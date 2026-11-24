@@ -1,0 +1,19 @@
+{
+  "outbounds": [
+    {
+      "tag": "us-residential",
+      "type": "socks",
+      "server": "fireside.bringyour.com",
+      "server_port": 7171,
+      "username": "06H0NKL6CB1QBCA3RT7BGE404J4ACSDJCCRICKEOG526T9VA4O44MBDP4C",
+      "password": ""
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    }
+  ],
+  "route": {
+    "final": "us-residential"
+  }
+}

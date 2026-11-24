@@ -1,0 +1,26 @@
+{
+  "drawn_at": "2026-11-24 04:32:09",
+  "published_at": "2026-11-24 04:32:10Z",
+  "exit_ip": "45.24.3.177",
+  "city": "Midland",
+  "region": "Texas",
+  "country": "United States",
+  "isp": "AT&T Enterprises, LLC",
+  "org": "AT&T Enterprises, LLC",
+  "as": "AS7018 AT&T Enterprises, LLC",
+  "ipapi_proxy": false,
+  "ipapi_hosting": false,
+  "gateway_host": "fireside.bringyour.com",
+  "gateway_port": 7171,
+  "provider_client_id": "01a20a0b-9e20-74c5-a1f2-dab126379861",
+  "checks": {
+    "generate_204": 204,
+    "x.com": 200,
+    "speed": {
+      "code": 200,
+      "bytes": 12320705,
+      "mbps": 6.43
+    }
+  },
+  "chained": false
+}
